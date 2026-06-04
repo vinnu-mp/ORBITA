@@ -7,7 +7,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: [process.env.CORS_ORIGIN, "https://orbita-jade.vercel.app/"],
+    origin: [process.env.CORS_ORIGIN, "https://orbita-jade.vercel.app"],
     credentials: true,
   }),
 );
