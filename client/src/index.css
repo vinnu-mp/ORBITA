@@ -85,9 +85,3 @@ body {
 .navbar-glow {
   animation: navbarGlow 5s linear infinite;
 }
-
-html,
-body {
-  overflow-x: hidden;
-  width: 100%;
-}
