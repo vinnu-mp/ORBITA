@@ -1,0 +1,93 @@
+/* Fonts — load only weights actually used */
+@import url("https://fonts.googleapis.com/css2?family=Syne:wght@700;800;900&family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Reset ──────────────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: #020510;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+/* ─── Custom scrollbar (dark theme) ─────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #020510;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(56, 189, 248, 0.2);
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(56, 189, 248, 0.35);
+}
+
+@keyframes navbarGlow {
+  0% {
+    transform: translateX(-30%);
+    opacity: 0.4;
+  }
+
+  50% {
+    transform: translateX(30%);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(-30%);
+    opacity: 0.4;
+  }
+}
+
+.navbar-glow {
+  animation: navbarGlow 6s ease-in-out infinite;
+}
+
+@keyframes navbarGlow {
+  0% {
+    transform: translateX(-120%);
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(220%);
+    opacity: 0;
+  }
+}
+
+.navbar-glow {
+  animation: navbarGlow 5s linear infinite;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+}
