@@ -42,6 +42,6 @@ export const fetchLaunches = async (limit = 10, offset = 0) => {
 
     infoURLs: launch.infoURLs || [],
 
-    vidURLs: launch.vidURLs || [],
+    vidURLs: launch.vid_urls || [],
   }));
 };

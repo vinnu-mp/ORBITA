@@ -270,6 +270,7 @@ export default function QuestionCard({
                     fontSize: 16,
                     transition: "all 0.22s ease",
                     flexShrink: 0,
+                    zIndex: 3,
                   }}
                   onMouseEnter={(e) => {
                     if (!bookmarked && !saving) {
@@ -335,6 +336,7 @@ export default function QuestionCard({
                         letterSpacing: "0.08em",
                         color: saveMsg === "error" ? "#f87171" : "#a5b4fc",
                         pointerEvents: "none",
+                        zIndex: 10,
                       }}
                     >
                       {saveMsg === "saved" && "✓ Saved"}

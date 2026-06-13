@@ -15,7 +15,7 @@ const EarthFallback = () => (
 export default function HeroSection() {
   return (
     <section
-      className="relative min-h-screen w-full overflow-hidden bg-[#020510] flex items-center"
+      className="relative min-h-screen w-full overflow-hidden bg-[#020510] flex items-center pt-12 lg:pt-0"
       style={{ isolation: "isolate" }}
     >
       {/* Layered background */}

@@ -298,6 +298,7 @@ export default function LaunchDetailModal({ launch, onClose, onAIExplain }) {
               justifyContent: "space-between",
               gap: 12,
               marginTop: -8,
+              zIndex: 3,
             }}
           >
             <h2
@@ -325,6 +326,7 @@ export default function LaunchDetailModal({ launch, onClose, onAIExplain }) {
                   background: "rgba(52,211,153,0.12)",
                   border: "1px solid rgba(52,211,153,0.3)",
                   color: "#34d399",
+                  zIndex: 2,
                 }}
               >
                 {launch.status?.abbrev ?? launch.status?.name}
@@ -408,7 +410,7 @@ export default function LaunchDetailModal({ launch, onClose, onAIExplain }) {
 
             {vidURLs.length > 0 && (
               <a
-                href={vidURLs[0].url}
+                href={vidURLs[0]}
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{

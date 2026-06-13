@@ -49,19 +49,18 @@ function ModelWithLoad({ url, onLoad }) {
     <>
       <Bounds fit clip observe margin={1.2}>
         <Center>
-          <primitive
-            object={scene}
-            scale={1}
-          />
+          <primitive object={scene} scale={1} />
         </Center>
       </Bounds>
       {/* Trigger onLoad after first successful render */}
-      <LoadTrigger onLoad={() => {
-        if (!called.current) {
-          called.current = true;
-          onLoad?.();
-        }
-      }} />
+      <LoadTrigger
+        onLoad={() => {
+          if (!called.current) {
+            called.current = true;
+            onLoad?.();
+          }
+        }}
+      />
     </>
   );
 }
@@ -83,7 +82,6 @@ export default function ModelViewer({ modelUrl, title }) {
 
   return (
     <div style={{ position: "relative", width: "100%", height: "100%" }}>
-
       {/* Loading overlay — shown while GLB is fetching */}
       {loading && !error && (
         <div
@@ -183,7 +181,7 @@ export default function ModelViewer({ modelUrl, title }) {
               letterSpacing: "0.05em",
             }}
           >
-            Place GLB file at {modelUrl}
+            or failed to load the model
           </p>
         </div>
       )}
@@ -194,8 +192,16 @@ export default function ModelViewer({ modelUrl, title }) {
         gl={{ antialias: true, alpha: false }}
       >
         <ambientLight intensity={0.4} />
-        <directionalLight position={[5, 5, 5]} intensity={1.2} color="#ffffff" />
-        <directionalLight position={[-5, -3, -5]} intensity={0.3} color="#818cf8" />
+        <directionalLight
+          position={[5, 5, 5]}
+          intensity={1.2}
+          color="#ffffff"
+        />
+        <directionalLight
+          position={[-5, -3, -5]}
+          intensity={0.3}
+          color="#818cf8"
+        />
         <pointLight position={[0, 5, 0]} intensity={0.8} color="#22d3ee" />
 
         <Stars
@@ -216,12 +222,14 @@ export default function ModelViewer({ modelUrl, title }) {
           2. Suspense catches Promise throws (loading) → shows nothing (spinner is in DOM above)
           3. ModelWithLoad calls useGLTF which suspends until ready
         */}
-        <ModelErrorBoundary onError={() => { setLoading(false); setError(true); }}>
+        <ModelErrorBoundary
+          onError={() => {
+            setLoading(false);
+            setError(true);
+          }}
+        >
           <Suspense fallback={null}>
-            <ModelWithLoad
-              url={modelUrl}
-              onLoad={() => setLoading(false)}
-            />
+            <ModelWithLoad url={modelUrl} onLoad={() => setLoading(false)} />
           </Suspense>
         </ModelErrorBoundary>
 

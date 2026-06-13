@@ -282,7 +282,7 @@ export default function AIPage() {
                 letterSpacing: "0.12em",
               }}
             >
-              SPACE INTELLIGENCE · GROQ
+              SPACE INTELLIGENCE
             </p>
           </div>
         </div>

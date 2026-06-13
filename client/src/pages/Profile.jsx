@@ -3,6 +3,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import axios from "../api/axios";
 import SavedNewsDrawer from "../components/profile/SavedNewsDrawer";
 import SavedQuestionsDrawer from "../components/profile/SavedQuestionsDrawer";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { logout } from "../store/auth/authSlice";
 
 function fmtDate(d) {
   if (!d) return "";
@@ -197,6 +200,20 @@ export default function ProfilePage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [drawer, setDrawer] = useState(null); // "news" | "questions" | null
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleLogout = async () => {
+    try {
+      await axios.post("/users/logout");
+
+      dispatch(logout());
+
+      navigate("/home");
+    } catch (error) {
+      console.error("Logout failed:", error);
+    }
+  };
 
   useEffect(() => {
     axios
@@ -382,34 +399,76 @@ export default function ProfilePage() {
             style={{
               display: "flex",
               alignItems: "center",
-              gap: 6,
-              padding: "5px 13px",
-              borderRadius: 999,
-              border: "1px solid rgba(52,211,153,0.22)",
-              background: "rgba(52,211,153,0.06)",
+              gap: 10,
             }}
           >
-            <span
+            {/* Active Badge */}
+            <div
               style={{
-                width: 6,
-                height: 6,
-                borderRadius: "50%",
-                background: "#34d399",
-                display: "block",
-                animation: "pulse 1.8s infinite",
-              }}
-            />
-            <span
-              style={{
-                fontFamily: "'DM Mono', monospace",
-                fontSize: 9.5,
-                color: "rgba(52,211,153,0.8)",
-                letterSpacing: "0.15em",
-                textTransform: "uppercase",
+                display: "flex",
+                alignItems: "center",
+                gap: 6,
+                padding: "5px 13px",
+                borderRadius: 999,
+                border: "1px solid rgba(52,211,153,0.22)",
+                background: "rgba(52,211,153,0.06)",
               }}
             >
-              Active
-            </span>
+              <span
+                style={{
+                  width: 6,
+                  height: 6,
+                  borderRadius: "50%",
+                  background: "#34d399",
+                  display: "block",
+                  animation: "pulse 1.8s infinite",
+                }}
+              />
+              <span
+                style={{
+                  fontFamily: "'DM Mono', monospace",
+                  fontSize: 9.5,
+                  color: "rgba(52,211,153,0.8)",
+                  letterSpacing: "0.15em",
+                  textTransform: "uppercase",
+                }}
+              >
+                Active
+              </span>
+            </div>
+
+            <button
+              onClick={handleLogout}
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: 6,
+                padding: "5px 13px",
+                borderRadius: 999,
+                border: "1px solid rgba(248,113,113,0.22)",
+                background: "rgba(248,113,113,0.06)",
+                cursor: "pointer",
+
+                fontFamily: "'DM Mono', monospace",
+                fontSize: 9.5,
+                color: "rgba(248,113,113,0.85)",
+                letterSpacing: "0.15em",
+                textTransform: "uppercase",
+
+                transition: "all 0.2s ease",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = "rgba(248,113,113,0.12)";
+                e.currentTarget.style.borderColor = "rgba(248,113,113,0.35)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = "rgba(248,113,113,0.06)";
+                e.currentTarget.style.borderColor = "rgba(248,113,113,0.22)";
+              }}
+            >
+              ⏻ Logout
+            </button>
           </div>
         </motion.div>
 

@@ -111,31 +111,26 @@ const Navbar = () => {
           }}
         >
           {/* Icon mark */}
-          <div
+          <img
+            src="../../public/OrbitaIcon.png"
+            alt="Orbita Logo"
+            className="w-12 h-12"
+          />
+          {/* <div
             style={{
               width: 32,
               height: 32,
               borderRadius: "50%",
-              background: "linear-gradient(135deg, #22d3ee 0%, #818cf8 100%)",
+              background:
+                "linear-gradient(135deg, #030712 0%, #0B1528 60%, #1E3A8A 100%)",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
               boxShadow: "0 0 16px rgba(34,211,238,0.35)",
             }}
           >
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-              <circle cx="8" cy="8" r="3.5" stroke="white" strokeWidth="1.5" />
-              <ellipse
-                cx="8"
-                cy="8"
-                rx="7"
-                ry="3"
-                stroke="white"
-                strokeWidth="1"
-                opacity="0.6"
-              />
-            </svg>
-          </div>
+            <img src="../../public/orbitaIcon.png" alt="Orbita Logo" />
+          </div> */}
           <span
             style={{
               fontFamily: "'Syne', 'Arial Black', sans-serif",

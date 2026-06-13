@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState, lazy, Suspense } from "react";
 import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 const ModelViewer = lazy(() => import("./ModelViewer"));
 
@@ -56,11 +57,14 @@ export default function DetailModal({ item, onClose }) {
           border: "1px solid rgba(34,211,238,0.15)",
           background: "rgba(4,8,26,0.96)",
           backdropFilter: "blur(24px)",
-          boxShadow: "0 24px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.04)",
+          boxShadow:
+            "0 24px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.04)",
           display: "flex",
           flexDirection: "column",
           overflow: "hidden",
-          transform: visible ? "scale(1) translateY(0)" : "scale(0.96) translateY(20px)",
+          transform: visible
+            ? "scale(1) translateY(0)"
+            : "scale(0.96) translateY(20px)",
           opacity: visible ? 1 : 0,
           transition: "all 0.35s cubic-bezier(0.16,1,0.3,1)",
         }}
@@ -217,7 +221,8 @@ export default function DetailModal({ item, onClose }) {
                   marginTop: 10,
                   height: 2,
                   width: 48,
-                  background: "linear-gradient(90deg, #22d3ee, rgba(129,140,248,0.5), transparent)",
+                  background:
+                    "linear-gradient(90deg, #22d3ee, rgba(129,140,248,0.5), transparent)",
                   borderRadius: 2,
                 }}
               />
@@ -225,13 +230,56 @@ export default function DetailModal({ item, onClose }) {
 
             {/* Markdown content */}
             <div className="orbita-markdown">
-              <ReactMarkdown>{item.fullInfo}</ReactMarkdown>
+              <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                {item.fullInfo}
+              </ReactMarkdown>
             </div>
           </div>
         </div>
       </div>
 
       <style>{`
+        .ai-md table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 10px 0;
+  font-size: 12.5px;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.ai-md th {
+  padding: 8px 12px;
+  text-align: left;
+  font-weight: 600;
+  color: rgba(255,255,255,0.5);
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.ai-md td {
+  padding: 8px 12px;
+  color: rgba(255,255,255,0.78);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  line-height: 1.5;
+}
+
+.ai-md tr:last-child td {
+  border-bottom: none;
+}
+
+.ai-md tr:nth-child(even) {
+  background: rgba(255,255,255,0.025);
+}
+
+.ai-md td:first-child {
+  color: rgba(34,211,238,0.75);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
         @keyframes pulse {
           0%, 100% { opacity: 1; transform: scale(1); }
           50% { opacity: 0.5; transform: scale(0.8); }
@@ -274,12 +322,45 @@ export default function DetailModal({ item, onClose }) {
 
 function LoadingSpinner({ label }) {
   return (
-    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 16 }}>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        gap: 16,
+      }}
+    >
       <div style={{ position: "relative", width: 48, height: 48 }}>
-        <div style={{ position: "absolute", inset: 0, borderRadius: "50%", border: "2px solid rgba(34,211,238,0.15)", borderTopColor: "#22d3ee", animation: "spin 1s linear infinite" }} />
-        <div style={{ position: "absolute", inset: 8, borderRadius: "50%", border: "2px solid rgba(129,140,248,0.15)", borderBottomColor: "#818cf8", animation: "spin 1.5s linear infinite reverse" }} />
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            borderRadius: "50%",
+            border: "2px solid rgba(34,211,238,0.15)",
+            borderTopColor: "#22d3ee",
+            animation: "spin 1s linear infinite",
+          }}
+        />
+        <div
+          style={{
+            position: "absolute",
+            inset: 8,
+            borderRadius: "50%",
+            border: "2px solid rgba(129,140,248,0.15)",
+            borderBottomColor: "#818cf8",
+            animation: "spin 1.5s linear infinite reverse",
+          }}
+        />
       </div>
-      <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 10, color: "rgba(103,232,249,0.5)", letterSpacing: "0.1em", textTransform: "uppercase" }}>
+      <span
+        style={{
+          fontFamily: "'DM Mono', monospace",
+          fontSize: 10,
+          color: "rgba(103,232,249,0.5)",
+          letterSpacing: "0.1em",
+          textTransform: "uppercase",
+        }}
+      >
         Initialising
       </span>
       <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
