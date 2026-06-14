@@ -1,6 +1,10 @@
 import React, { Suspense, lazy } from "react";
 
 const HeroSection = lazy(() => import("../components/home/Hero/HeroSection"));
+const PlatformFeatures = lazy(
+  () => import("../components/home/PlatformFeatures"),
+);
+const Footer = lazy(() => import("../components/layouts/Footer"));
 
 // Future sections — import lazily when they're built
 // const FeaturesSection = lazy(() => import("../components/home/Features/FeaturesSection"));
@@ -25,8 +29,8 @@ export default function HomePage() {
     <main className="bg-[#020510] min-h-screen">
       <Suspense fallback={<PageFallback />}>
         <HeroSection />
-        {/* <FeaturesSection /> */}
-        {/* <ExploreSection /> */}
+        <PlatformFeatures />
+        <Footer />
       </Suspense>
     </main>
   );
