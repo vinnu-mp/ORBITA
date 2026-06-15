@@ -334,6 +334,7 @@ export default function AIExplainModal({ article, aiType, onClose }) {
                 <img
                   src={article.image}
                   alt={article.title}
+                  referrerPolicy="no-referrer"
                   style={{
                     width: "100%",
                     height: 138,

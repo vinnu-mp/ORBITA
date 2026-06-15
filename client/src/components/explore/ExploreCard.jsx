@@ -33,6 +33,7 @@ export default function ExploreCard({ item, onClick }) {
           <img
             src={item.image}
             alt={item.title}
+            referrerPolicy="no-referrer"
             onError={() => setImgError(true)}
             style={{
               width: "100%",

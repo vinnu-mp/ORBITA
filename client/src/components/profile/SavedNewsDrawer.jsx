@@ -65,6 +65,7 @@ function NewsItem({ item, onRemove }) {
           <img
             src={item.image}
             alt={item.title}
+            referrerPolicy="no-referrer"
             onError={() => setImgErr(true)}
             style={{
               width: "100%",

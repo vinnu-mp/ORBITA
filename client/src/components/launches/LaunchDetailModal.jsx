@@ -221,6 +221,7 @@ export default function LaunchDetailModal({ launch, onClose, onAIExplain }) {
             <img
               src={img}
               alt={name}
+              referrerPolicy="no-referrer"
               style={{
                 width: "100%",
                 height: "100%",

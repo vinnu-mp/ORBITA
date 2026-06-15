@@ -114,6 +114,7 @@ const Navbar = () => {
           <img
             src="../../public/OrbitaIcon.png"
             alt="Orbita Logo"
+            referrerPolicy="no-referrer"
             className="w-12 h-12"
           />
           {/* <div
@@ -268,6 +269,7 @@ const Navbar = () => {
                 <img
                   src="../../public/user.png"
                   alt="profile"
+                  referrerPolicy="no-referrer"
                   style={{
                     width: "100%",
                     height: "100%",
