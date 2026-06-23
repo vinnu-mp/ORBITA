@@ -1,16 +1,6 @@
 import dotenv from "dotenv";
-
 dotenv.config({ path: "./.env" });
-import nodemailer from "nodemailer";
 
-export const transporter = nodemailer.createTransport({
-  host: "smtp.gmail.com",
-  port: 587,
-  secure: false,
-  family: 4,
+import { Resend } from "resend";
 
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,
-  },
-});
+export const resend = new Resend(process.env.RESEND_API_KEY);
