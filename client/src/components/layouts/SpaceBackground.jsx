@@ -342,7 +342,7 @@ export default function SpaceBackground() {
         style={{
           position: "absolute",
           inset: 0,
-          backgroundImage: "url('../../../public/bg/space.jpg')",
+          backgroundImage: "url('/bg/space.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",

@@ -31,7 +31,7 @@ function QuestionCard({ item, onRemove }) {
     e.stopPropagation();
     setRemoving(true);
     try {
-      await axios.delete(`/bookmarks/questions/${item.questionId}`);
+      await axios.delete(`/bookmarks/question/${item.questionId}`);
       onRemove(item.questionId);
     } catch {
       setRemoving(false);
@@ -52,7 +52,6 @@ function QuestionCard({ item, onRemove }) {
           : "1px solid rgba(255,255,255,0.06)",
         background: "rgba(255,255,255,0.025)",
         backdropFilter: "blur(12px)",
-        overflow: "hidden",
         transition: "border-color 0.25s",
       }}
     >
