@@ -1,11 +1,11 @@
-import { resend } from "./email.config.js";
+import { transporter } from "./email.config.js";
 import verificationEmailTemplate from "../templates/verificationEmailTemplate.js";
 import welcomeEmailTemplate from "../templates/welcomeEmailTemplate.js";
 
 export const sendVerificationEmail = async (email, username, otp) => {
   try {
-    await resend.emails.send({
-      from: "Orbita <onboarding@resend.dev>", // use this for testing, change to your domain later
+    await transporter.sendMail({
+      from: process.env.EMAIL_USER,
       to: email,
       subject: "Verify Your Orbita Account",
       html: verificationEmailTemplate(username, otp),
@@ -17,8 +17,8 @@ export const sendVerificationEmail = async (email, username, otp) => {
 
 export const sendWelcomeEmail = async (email, username) => {
   try {
-    await resend.emails.send({
-      from: "Orbita <onboarding@resend.dev>", // use this for testing, change to your domain later
+    await transporter.sendMail({
+      from: process.env.EMAIL_USER,
       to: email,
       subject: "Welcome to Orbita!",
       html: welcomeEmailTemplate(username),
