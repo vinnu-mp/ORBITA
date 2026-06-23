@@ -338,14 +338,15 @@ export default function SpaceBackground() {
     >
       {/* Space image layer */}
       <div
+        className="absolute inset-0 bg-[url('/bg/space.jpg')] bg-cover bg-center bg-no-repeat opacity-100 mix-blend-screen"
         style={{
           position: "absolute",
           inset: 0,
-          backgroundImage: "url('/bg/space.jpg')",
+          backgroundImage: "url('../../../public/bg/space.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
-          opacity: 0.18, // very subtle — just adds texture/depth
+          opacity: 0.4, // very subtle — just adds texture/depth
           mixBlendMode: "screen",
         }}
       />

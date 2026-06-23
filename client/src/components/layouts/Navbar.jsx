@@ -112,7 +112,7 @@ const Navbar = () => {
         >
           {/* Icon mark */}
           <img
-            src="../../public/OrbitaIcon.png"
+            src="/icons/OrbitaIcon.png"
             alt="Orbita Logo"
             referrerPolicy="no-referrer"
             className="w-12 h-12"
@@ -130,7 +130,7 @@ const Navbar = () => {
               boxShadow: "0 0 16px rgba(34,211,238,0.35)",
             }}
           >
-            <img src="../../public/orbitaIcon.png" alt="Orbita Logo" />
+            <img src="/orbitaIcon.png" alt="Orbita Logo" />
           </div> */}
           <span
             style={{
@@ -267,7 +267,7 @@ const Navbar = () => {
                 }}
               >
                 <img
-                  src="../../public/user.png"
+                  src="/icons/user.png"
                   alt="profile"
                   referrerPolicy="no-referrer"
                   style={{
