@@ -75,7 +75,6 @@ const refreshAccessToken = asyncHandler(async (req, res) => {
 
 const registerUser = asyncHandler(async (req, res) => {
   const { username, email, fullname, password } = req.body;
-
   if (
     [username, email, fullname, password].some((field) => field?.trim() === "")
   ) {
@@ -84,7 +83,11 @@ const registerUser = asyncHandler(async (req, res) => {
 
   const existingUser = await User.findOne({ $or: [{ email }, { username }] });
 
-  if (existingUser) {
+  if (existingUser && !existingUser.isVarified) {
+    await User.findByIdAndDelete(existingUser._id);
+  }
+
+  if (existingUser && existingUser.isVarified) {
     throw new ApiError(400, "User with username or email already exists!");
   }
 

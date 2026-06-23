@@ -14,7 +14,9 @@ function App() {
     axios
       .get("/users/me")
       .then((res) => {
-        dispatch(login({ userData: res.data.data }));
+        if (res.data.isVarified === true) {
+          dispatch(login({ userData: res.data.data }));
+        }
       })
       .catch(() => {
         dispatch(logout());
