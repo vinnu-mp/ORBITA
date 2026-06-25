@@ -105,6 +105,7 @@ export default function DetailModal({ item, onClose }) {
           </div>
 
           <button
+            data-cursor="button"
             onClick={handleClose}
             style={{
               width: 32,

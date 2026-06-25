@@ -177,6 +177,7 @@ export default function NewsSection({
             {error}
           </p>
           <button
+            data-cursor="button"
             onClick={() => {
               setInitialized(false);
               fetchInitial();

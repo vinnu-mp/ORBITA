@@ -95,6 +95,8 @@ const Login = () => {
             )}
 
             <button
+              data-cursor="button"
+              data-cursor="button"
               type="submit"
               disabled={loading}
               className="w-full py-4 rounded-2xl bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 font-semibold tracking-wide text-black transition-all duration-300 hover:scale-[1.01] hover:shadow-[0_0_25px_rgba(34,211,238,0.25)] disabled:opacity-60"
@@ -105,6 +107,7 @@ const Login = () => {
             <p className="text-center text-gray-400 text-sm pt-3">
               Don&apos;t have an account?{" "}
               <Link
+                data-cursor="link"
                 to="/signup"
                 className="text-cyan-300 hover:text-cyan-200 transition-colors duration-300"
               >

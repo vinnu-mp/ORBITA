@@ -411,6 +411,7 @@ export default function LaunchDetailModal({ launch, onClose, onAIExplain }) {
 
             {vidURLs.length > 0 && (
               <a
+                data-cursor="link"
                 href={vidURLs[0]}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -436,6 +437,7 @@ export default function LaunchDetailModal({ launch, onClose, onAIExplain }) {
 
             {infoURLs.length > 0 && (
               <a
+                data-cursor="link"
                 href={infoURLs[0].url}
                 target="_blank"
                 rel="noopener noreferrer"

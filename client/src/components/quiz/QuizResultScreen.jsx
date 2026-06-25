@@ -277,6 +277,7 @@ export default function QuizResultScreen({
           style={{ display: "flex", gap: 10, flexWrap: "wrap" }}
         >
           <button
+            data-cursor="button"
             onClick={onRestart}
             style={{
               flex: 1,
@@ -300,6 +301,7 @@ export default function QuizResultScreen({
           </button>
 
           <button
+            data-cursor="button"
             onClick={onHome}
             style={{
               flex: 1,

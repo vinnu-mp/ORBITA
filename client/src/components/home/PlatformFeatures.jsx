@@ -595,6 +595,7 @@ function BottomCTA() {
         >
           <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }}>
             <Link
+              data-cursor="link"
               to={content.primary.to}
               style={{
                 padding: "12px 28px",
@@ -616,6 +617,7 @@ function BottomCTA() {
 
           <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
             <Link
+              data-cursor="button"
               to={content.secondary.to}
               style={{
                 padding: "12px 28px",

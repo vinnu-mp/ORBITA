@@ -523,6 +523,7 @@ export default function SavedQuestionsDrawer({ onClose }) {
               const active = filter === f;
               return (
                 <button
+                  data-cursor="button"
                   key={f}
                   onClick={() => setFilter(f)}
                   style={{

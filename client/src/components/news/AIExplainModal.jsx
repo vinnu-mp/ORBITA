@@ -395,6 +395,7 @@ export default function AIExplainModal({ article, aiType, onClose }) {
             {/* Source link */}
             {article.officialUrl && (
               <a
+                data-cursor="link"
                 href={article.officialUrl}
                 target="_blank"
                 rel="noopener noreferrer"

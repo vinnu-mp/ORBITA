@@ -147,6 +147,7 @@ function NewsItem({ item, onRemove }) {
           )}
           {item.officialUrl && (
             <a
+              data-cursor="link"
               href={item.officialUrl}
               target="_blank"
               rel="noopener noreferrer"

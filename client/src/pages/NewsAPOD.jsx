@@ -120,6 +120,7 @@ export default function APODPage() {
         <span style={{ fontSize: 40 }}>🔭</span>
         <p style={{ color: "rgba(255,255,255,0.4)", fontSize: 14 }}>{error}</p>
         <button
+          data-cursor="button"
           onClick={() => window.location.reload()}
           style={{
             padding: "7px 20px",
@@ -504,6 +505,7 @@ export default function APODPage() {
 
           {isLong && (
             <button
+              data-cursor="button"
               onClick={() => setExpanded((p) => !p)}
               style={{
                 marginTop: 14,

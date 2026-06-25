@@ -101,6 +101,7 @@ const Navbar = () => {
       >
         {/* ── Logo ── */}
         <Link
+          data-cursor="button"
           to="/"
           style={{
             display: "flex",
@@ -162,6 +163,7 @@ const Navbar = () => {
           {/* Nav links */}
           {mainItems.map((item) => (
             <Link
+              data-cursor="button"
               key={item.slug}
               to={item.slug}
               style={{
@@ -229,6 +231,7 @@ const Navbar = () => {
           {/* Auth buttons */}
           {authStatus ? (
             <Link
+              data-cursor="button"
               to="/profile"
               style={{
                 display: "flex",
@@ -283,6 +286,7 @@ const Navbar = () => {
           ) : (
             <>
               <Link
+                data-cursor="button"
                 to="/login"
                 style={{
                   padding: "7px 16px",
@@ -311,6 +315,7 @@ const Navbar = () => {
               </Link>
 
               <Link
+                data-cursor="button"
                 to="/signup"
                 style={{
                   padding: "7px 18px",
@@ -351,6 +356,8 @@ const Navbar = () => {
 
         {/* ── Mobile Hamburger ── */}
         <button
+          data-cursor="button"
+          data-cursor="button"
           onClick={() => setMenuOpen((p) => !p)}
           className="orbita-hamburger"
           aria-label="Toggle menu"
@@ -421,6 +428,7 @@ const Navbar = () => {
         <div style={{ padding: "12px 20px 20px" }}>
           {visibleItems.map((item) => (
             <Link
+              data-cursor="button"
               key={item.slug}
               to={item.slug}
               style={{

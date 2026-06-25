@@ -89,6 +89,7 @@ export default function Footer() {
           >
             {/* Logo */}
             <Link
+              data-cursor="link"
               to="/"
               style={{
                 display: "flex",
@@ -200,6 +201,7 @@ export default function Footer() {
                   {items.map((item) => (
                     <li key={item.label}>
                       <Link
+                        data-cursor="link"
                         to={item.to}
                         style={{
                           fontSize: 13.5,

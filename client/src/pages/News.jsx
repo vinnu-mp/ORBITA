@@ -110,6 +110,7 @@ export default function News() {
       <div className="mobile-news-nav">
         <div style={{ padding: "0 16px 16px", position: "relative" }}>
           <button
+            data-cursor="button"
             onClick={() => setMobileOpen((p) => !p)}
             style={{
               width: "100%",

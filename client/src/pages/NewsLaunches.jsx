@@ -600,6 +600,7 @@ export default function LaunchesPage() {
             {error}
           </p>
           <button
+            data-cursor="button"
             onClick={() => window.location.reload()}
             style={{
               padding: "6px 18px",

@@ -289,6 +289,7 @@ export default function HeroText() {
           }}
         >
           <button
+            data-cursor="button"
             className="hero-cta-btn"
             onClick={() => navigate(isLoggedIn ? "/news" : "/signup")}
             style={{

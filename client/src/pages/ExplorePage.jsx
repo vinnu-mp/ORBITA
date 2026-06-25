@@ -176,6 +176,8 @@ export default function ExplorePage() {
           style={{ position: "relative", width: "100%", maxWidth: 320 }}
         >
           <button
+            data-cursor="button"
+            data-cursor="button"
             onClick={() => setDropdownOpen(!dropdownOpen)}
             style={{
               width: "100%",
@@ -228,6 +230,8 @@ export default function ExplorePage() {
               >
                 {SECTIONS.map((s) => (
                   <button
+                    data-cursor="button"
+                    data-cursor="button"
                     key={s.id}
                     onClick={() => scrollTo(s.id)}
                     style={{
@@ -328,6 +332,8 @@ function NavTab({ section, active, onClick }) {
   const [hovered, setHovered] = useState(false);
   return (
     <button
+      data-cursor="button"
+      data-cursor="button"
       onClick={onClick}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}

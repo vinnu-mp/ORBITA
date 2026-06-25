@@ -220,6 +220,7 @@ export default function QuestionCard({
             <div style={{ display: "flex", gap: 10, alignItems: "center" }}>
               {/* Next button */}
               <button
+                data-cursor="button"
                 onClick={onNext}
                 style={{
                   flex: 1,
@@ -247,6 +248,7 @@ export default function QuestionCard({
               {/* Bookmark button */}
               <div style={{ position: "relative" }}>
                 <button
+                  data-cursor="button"
                   onClick={handleBookmark}
                   disabled={saving || bookmarked}
                   title={bookmarked ? "Saved" : "Save question"}

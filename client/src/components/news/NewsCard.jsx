@@ -172,6 +172,7 @@ export default function NewsCard({ article, onAIExplain }) {
           {/* Official Link */}
           {officialUrl && (
             <a
+              data-cursor="link"
               href={officialUrl}
               target="_blank"
               rel="noopener noreferrer"
@@ -214,6 +215,7 @@ export default function NewsCard({ article, onAIExplain }) {
 
           {/* AI Explain */}
           <button
+            data-cursor="button"
             onClick={() => onAIExplain(article)}
             style={{
               display: "inline-flex",

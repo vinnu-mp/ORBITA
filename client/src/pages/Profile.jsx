@@ -438,6 +438,7 @@ export default function ProfilePage() {
             </div>
 
             <button
+              data-cursor="button"
               onClick={handleLogout}
               style={{
                 display: "flex",

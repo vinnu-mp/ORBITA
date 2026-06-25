@@ -50,6 +50,7 @@ const Signup = () => {
 
       setOtpSent(true);
     } catch (error) {
+      console.log(error);
       setBackendError(error?.response?.data?.message || "Failed to send OTP");
     } finally {
       setOtpLoading(false);
@@ -167,6 +168,7 @@ const Signup = () => {
 
             {!otpSent ? (
               <button
+                data-cursor="button"
                 type="button"
                 onClick={handleSendOTP}
                 disabled={otpLoading}
@@ -176,6 +178,7 @@ const Signup = () => {
               </button>
             ) : (
               <button
+                data-cursor="button"
                 type="submit"
                 disabled={verifyLoading}
                 className="w-full py-4 rounded-2xl bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 font-semibold tracking-wide text-black transition-all duration-300 hover:scale-[1.01] hover:shadow-[0_0_25px_rgba(34,211,238,0.25)] disabled:opacity-60"
@@ -187,6 +190,7 @@ const Signup = () => {
             <p className="text-center text-gray-400 text-sm pt-3">
               Already have an account?{" "}
               <Link
+                data-cursor="link"
                 to="/login"
                 className="text-cyan-300 hover:text-cyan-200 transition-colors duration-300"
               >
