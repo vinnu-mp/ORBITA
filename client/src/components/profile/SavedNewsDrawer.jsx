@@ -182,6 +182,7 @@ function NewsItem({ item, onRemove }) {
 
       {/* Remove button */}
       <motion.button
+        data-cursor="button"
         whileTap={{ scale: 0.9 }}
         onClick={handleRemove}
         disabled={removing}
@@ -338,6 +339,7 @@ export default function SavedNewsDrawer({ onClose }) {
             </div>
           </div>
           <motion.button
+            data-cursor="button"
             whileTap={{ scale: 0.9 }}
             onClick={onClose}
             style={{

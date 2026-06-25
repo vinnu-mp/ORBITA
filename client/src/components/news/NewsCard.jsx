@@ -266,6 +266,7 @@ export default function NewsCard({ article, onAIExplain }) {
 
           {/* Save — right aligned */}
           <motion.button
+            data-cursor="button"
             whileTap={{ scale: 0.88 }}
             onClick={toggle}
             disabled={loading || !authStatus}

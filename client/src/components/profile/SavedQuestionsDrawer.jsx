@@ -163,6 +163,7 @@ function QuestionCard({ item, onRemove }) {
 
           {/* Remove */}
           <motion.button
+            data-cursor="button"
             whileTap={{ scale: 0.88 }}
             onClick={handleRemove}
             disabled={removing}
@@ -472,6 +473,7 @@ export default function SavedQuestionsDrawer({ onClose }) {
             </div>
           </div>
           <motion.button
+            data-cursor="button"
             whileTap={{ scale: 0.9 }}
             onClick={onClose}
             style={{

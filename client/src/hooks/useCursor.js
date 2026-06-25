@@ -59,11 +59,17 @@ export default function useCursor() {
     };
 
     const handleOver = (e) => {
-      const btn = e.target.closest("[data-cursor='button']");
-      const lnk = e.target.closest("[data-cursor='link']");
-      if (btn) onEnterBtn();
-      else if (lnk) onEnterLink();
-      else reset();
+      const el =
+        e.target.closest("[data-cursor='button']") ||
+        e.target.closest("[data-cursor='link']");
+
+      if (!el) {
+        reset();
+        return;
+      }
+
+      if (el.dataset.cursor === "button") onEnterBtn();
+      else if (el.dataset.cursor === "link") onEnterLink();
     };
 
     document.addEventListener("mousemove", move);

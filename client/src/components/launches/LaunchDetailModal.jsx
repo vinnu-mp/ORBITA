@@ -257,6 +257,7 @@ export default function LaunchDetailModal({ launch, onClose, onAIExplain }) {
           />
           {/* Close btn */}
           <motion.button
+            data-cursor="button"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.92 }}
             onClick={onClose}
@@ -371,6 +372,7 @@ export default function LaunchDetailModal({ launch, onClose, onAIExplain }) {
           {/* Action buttons */}
           <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
             <motion.button
+              data-cursor="button"
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.96 }}
               onClick={() => onAIExplain(launch)}

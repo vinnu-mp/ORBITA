@@ -386,6 +386,8 @@ export default function APODPage() {
         >
           {/* AI Explain */}
           <motion.button
+            data-cursor="button"
+            data-cursor="button"
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.96 }}
             onClick={() => setAiOpen(true)}
@@ -427,6 +429,7 @@ export default function APODPage() {
           {/* HD Download */}
           {apod.hdImage && !isVideo && (
             <motion.a
+              data-cursor="link"
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.96 }}
               href={apod.hdImage}

@@ -291,6 +291,7 @@ export default function AIPage() {
         <AnimatePresence>
           {showClear && (
             <motion.button
+              data-cursor="button"
               initial={{ opacity: 0, scale: 0.88, x: 10 }}
               animate={{ opacity: 1, scale: 1, x: 0 }}
               exit={{ opacity: 0, scale: 0.88, x: 10 }}
@@ -445,6 +446,7 @@ export default function AIPage() {
                 >
                   {SUGGESTIONS.map((s, i) => (
                     <motion.button
+                      data-cursor="button"
                       key={i}
                       initial={{ opacity: 0, y: 12 }}
                       animate={{ opacity: 1, y: 0 }}
@@ -608,6 +610,7 @@ export default function AIPage() {
 
             {/* Send button */}
             <motion.button
+              data-cursor="button"
               whileHover={{ scale: !loading && input.trim() ? 1.06 : 1 }}
               whileTap={{ scale: 0.93 }}
               onClick={() => sendMessage()}

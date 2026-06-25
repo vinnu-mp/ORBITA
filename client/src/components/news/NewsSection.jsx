@@ -256,6 +256,7 @@ export default function NewsSection({
               }}
             >
               <motion.button
+                data-cursor="button"
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.97 }}
                 onClick={fetchMore}

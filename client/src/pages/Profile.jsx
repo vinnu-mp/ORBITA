@@ -105,6 +105,7 @@ function StatCard({ value, label, icon, delay = 0 }) {
 function ActionCard({ icon, label, count, color, onClick, delay = 0 }) {
   return (
     <motion.button
+      data-cursor="button"
       initial={{ opacity: 0, y: 18 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.42, delay, ease: [0.25, 0.46, 0.45, 0.94] }}

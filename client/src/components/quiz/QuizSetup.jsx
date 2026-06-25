@@ -235,6 +235,7 @@ function CategoryCard({ cat, selected, index, onClick }) {
   const [hovered, setHovered] = useState(false);
   return (
     <motion.button
+      data-cursor="button"
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.06 }}

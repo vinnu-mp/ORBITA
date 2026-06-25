@@ -155,6 +155,8 @@ export default function ComponentCard({ item, onAIExplain }) {
         {/* AI Explain button only */}
         <div style={{ marginTop: 2 }}>
           <motion.button
+            data-cursor="button"
+            data-cursor="button"
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.96 }}
             onClick={onAIExplain}

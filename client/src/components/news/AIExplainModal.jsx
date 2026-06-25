@@ -271,6 +271,7 @@ export default function AIExplainModal({ article, aiType, onClose }) {
             </div>
           </div>
           <motion.button
+            data-cursor="button"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.93 }}
             onClick={onClose}
@@ -562,6 +563,7 @@ export default function AIExplainModal({ article, aiType, onClose }) {
                   }}
                 />
                 <motion.button
+                  data-cursor="button"
                   whileHover={{ scale: !loading && input.trim() ? 1.07 : 1 }}
                   whileTap={{ scale: 0.93 }}
                   onClick={handleSend}

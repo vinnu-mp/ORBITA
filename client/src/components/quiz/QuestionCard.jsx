@@ -401,6 +401,7 @@ function OptionButton({ option, index, state, onClick, disabled }) {
 
   return (
     <motion.button
+      data-cursor="button"
       initial={{ opacity: 0, x: 20 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.3, delay: index * 0.06 }}

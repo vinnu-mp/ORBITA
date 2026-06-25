@@ -360,6 +360,7 @@ function LaunchCard({ launch, onAIExplain, onViewDetails, index }) {
           style={{ display: "flex", gap: 8, marginTop: 4, flexWrap: "wrap" }}
         >
           <motion.button
+            data-cursor="button"
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.96 }}
             onClick={() => onAIExplain(launch)}
@@ -399,6 +400,7 @@ function LaunchCard({ launch, onAIExplain, onViewDetails, index }) {
           </motion.button>
 
           <motion.button
+            data-cursor="button"
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.96 }}
             onClick={() => onViewDetails(launch)}
@@ -692,6 +694,7 @@ export default function LaunchesPage() {
               }}
             >
               <motion.button
+                data-cursor="button"
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.97 }}
                 onClick={loadMore}
