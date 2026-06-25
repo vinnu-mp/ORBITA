@@ -262,7 +262,7 @@ export default function Footer() {
                 lineHeight: 1.6,
               }}
             >
-              Have feedback, suggestions, or just want to say hello?
+              Have any suggestions, feedback or issues? Feel free to contact us.
             </p>
           </div>
 
