@@ -87,7 +87,6 @@ export default function Footer() {
               gap: 16,
             }}
           >
-            {/* Logo */}
             <Link
               data-cursor="link"
               to="/"
@@ -182,7 +181,6 @@ export default function Footer() {
                     letterSpacing: "0.2em",
                     textTransform: "uppercase",
                     color: "rgba(255,255,255,0.25)",
-                    marginBottom: 14,
                     margin: "0 0 14px",
                   }}
                 >
@@ -226,6 +224,92 @@ export default function Footer() {
               </div>
             ))}
           </div>
+        </div>
+
+        {/* ── Contact ── */}
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            flexWrap: "wrap",
+            gap: 16,
+            padding: "24px 28px",
+            borderRadius: 12,
+            border: "1px solid rgba(34,211,238,0.08)",
+            background: "rgba(34,211,238,0.03)",
+            marginBottom: 48,
+          }}
+        >
+          <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
+            <p
+              style={{
+                fontFamily: "'DM Mono', monospace",
+                fontSize: 9.5,
+                letterSpacing: "0.2em",
+                textTransform: "uppercase",
+                color: "rgba(255,255,255,0.25)",
+                margin: 0,
+              }}
+            >
+              Contact
+            </p>
+            <p
+              style={{
+                fontSize: 13.5,
+                color: "rgba(255,255,255,0.45)",
+                margin: 0,
+                lineHeight: 1.6,
+              }}
+            >
+              Have feedback, suggestions, or just want to say hello?
+            </p>
+          </div>
+
+          <a
+            data-cursor="link"
+            href="mailto:orbita2277@gmail.com"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 8,
+              padding: "10px 20px",
+              borderRadius: 8,
+              border: "1px solid rgba(34,211,238,0.2)",
+              background: "rgba(34,211,238,0.05)",
+              color: "rgba(34,211,238,0.8)",
+              fontSize: 13,
+              fontFamily: "'DM Mono', monospace",
+              textDecoration: "none",
+              letterSpacing: "0.05em",
+              transition: "all 0.2s",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = "rgba(34,211,238,0.1)";
+              e.currentTarget.style.borderColor = "rgba(34,211,238,0.4)";
+              e.currentTarget.style.color = "#22d3ee";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = "rgba(34,211,238,0.05)";
+              e.currentTarget.style.borderColor = "rgba(34,211,238,0.2)";
+              e.currentTarget.style.color = "rgba(34,211,238,0.8)";
+            }}
+          >
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <rect x="2" y="4" width="20" height="16" rx="2" />
+              <path d="m2 7 10 7 10-7" />
+            </svg>
+            orbita2277@gmail.com
+          </a>
         </div>
 
         {/* ── Divider ── */}
